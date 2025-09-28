@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Estudiantes</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="welcome-box">
+      <h1>WELCOME</h1>
+      <h3>Tu Castellano en Linea</h3>
+      <p>
+        Bienvenido a la plataforma de estudiantes.  
+        Selecciona tu curso, tu nombre y digita tu número de tarjeta para ingresar.
+      </p>
+    </div>
+
+    <div class="login-box">
+      <h2>Sign in</h2>
+      <form id="loginForm">
+        <select id="cursoSelect" required>
+          <option value="">Seleccionar curso</option>
+          
+        </select>
+
+        <select id="estudianteSelect" required>
+          <option value="">Seleccionar estudiante</option>
+        </select>
+
+        <input type="password" id="tarjetaInput" placeholder="Número de tarjeta" required>
+
+        <div class="options">
+          <label>
+            <input type="checkbox"> Recordarme
+          </label>
+          <a href="#">¿Olvidaste tu clave?</a>
+        </div>
+
+        <button type="submit">Ingresar</button>
+      </form>
+      <p class="signup">¿No tienes cuenta? <a href="#">Regístrate</a></p>
+      <p id="mensaje"></p>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

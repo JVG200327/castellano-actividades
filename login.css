@@ -1,0 +1,125 @@
+html, body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+  background-image: url('assets/fondo\ quijote.jpg'); /* Cambia la ruta según tu imagen */
+    background-size: cover;       /* Que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Que no se repita */
+    background-position: center;  /* Centrada */
+    background-attachment: fixed; /* Fondo fijo al hacer scroll */
+}
+
+
+.container {
+  display: flex;
+  width: 900px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.welcome-box {
+  flex: 1;
+  background: linear-gradient(135deg, #0052cc, #1e90ff);
+  color: white;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome-box h1 {
+  font-size: 40px;
+  margin: 0 0 10px;
+}
+
+.welcome-box h3 {
+  margin: 0 0 20px;
+  font-weight: normal;
+}
+
+.welcome-box p {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.login-box {
+  flex: 1;
+  background: transparent;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #0052cc;
+}
+
+select, input {
+  margin: 10px 0;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+select:focus, input:focus {
+  border-color: #0052cc;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin: 10px 0 20px;
+}
+
+.options a {
+  text-decoration: none;
+  color: #0052cc;
+}
+
+button {
+  background: linear-gradient(135deg, #0052cc, #1e90ff);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.signup {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup a {
+  color: #0052cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#mensaje {
+  margin-top: 10px;
+  font-weight: bold;
+  color: red;
+}

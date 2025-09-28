@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>👨‍🏫 Panel Docente</title>
+  <style>
+
+html, body {
+    margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background: #f4f6f9;
+    background-image: url('assets/profe.jpg'); /* Cambia la ruta según tu imagen */
+    background-size: cover;       /* Que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Que no se repita */
+    background-position: center;  /* Centrada */
+    background-attachment: fixed; /* Fondo fijo al hacer scroll */
+    }
+
+    /* ====== SIDEBAR ====== */
+    .sidebar {
+      width: 220px;
+      background: #1e8026;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .menu {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu li {
+      margin: 15px 0;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background: #145b1a;
+    }
+
+    /* ====== CONTENIDO PRINCIPAL ====== */
+    .main-content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .header {
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .header p {
+      color: #555;
+    }
+
+    /* ====== FORMULARIO NUEVA TAREA ====== */
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    /* ====== BOTONES ====== */
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      background: #1e8026;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #145b1a;
+    }
+
+    .btn-secondary {
+      margin-left: 10px;
+      background: #7f8c8d;
+    }
+
+    .btn-secondary:hover {
+      background: #636e72;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔹 Barra lateral -->
+  <aside class="sidebar">
+    <h2 class="logo">📖 Mi Aula</h2>
+    <nav>
+      <ul class="menu">
+        <li><a href="docente.html">👨‍🏫 Panel Docente</a></li>
+        <li><a href="index.html">📚 Ver como Estudiante</a></li>
+        <li><a href="#">⚙️ Ajustes</a></li>
+        <li><a href="#">🚪 Salir</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- 🔹 Contenido principal -->
+  <main class="main-content">
+    <header class="header">
+      <h1>👨‍🏫 Panel del Docente</h1>
+      <p>Aquí puedes asignar nuevas tareas para tus estudiantes</p>
+    </header>
+
+    <!-- 🔹 Formulario Nueva Tarea -->
+    <section class="card">
+      <h2>➕ Crear Nueva Tarea</h2>
+      <label for="tituloInput">Título de la tarea:</label>
+      <input type="text" id="tituloInput" placeholder="Ej: Ensayo sobre el Quijote">
+
+      <label for="descripcionInput">Descripción:</label>
+      <textarea id="descripcionInput" placeholder="Escribe las instrucciones de la tarea"></textarea>
+
+      <label for="tipoTarea">Tipo de tarea:</label>
+      <select id="tipoTarea">
+        <option value="archivo">📂 Subir Archivo</option>
+        <option value="texto">📝 Escribir Texto</option>
+        <option value="crucigrama">❓ Crucigrama</option>
+      </select>
+
+      <label for="fechaEntrega">Fecha de entrega:</label>
+      <input type="date" id="fechaEntrega">
+
+      <button class="btn" onclick="agregarTarea()">✅ Publicar Tarea</button>
+      <a href="index.html" class="btn btn-secondary">⬅️ Volver</a>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

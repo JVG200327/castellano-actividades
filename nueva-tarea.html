@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>➕ Subir Nueva Tarea</title>
+  <style>
+    /* ====== RESET GENERAL ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html, body {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f7fa;
+    color: #333;
+    
+    background-image: url('assets/entrega.png'); /* Cambia la ruta según tu imagen */
+    background-size: cover;       /* Que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Que no se repita */
+    background-position: center;  /* Centrada */
+    background-attachment: fixed; /* Fondo fijo al hacer scroll */
+    }
+
+    /* ====== SIDEBAR ====== */
+    .sidebar {
+      width: 220px;
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      flex-shrink: 0;
+    }
+
+    .sidebar .logo {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .menu {
+      list-style: none;
+    }
+
+    .menu li {
+      margin: 15px 0;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px;
+      display: block;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background: #34495e;
+    }
+
+    /* ====== MAIN CONTENT ====== */
+    .main-content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .header {
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
+
+    .header p {
+      color: #555;
+    }
+
+    /* ====== CARD ====== */
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+    }
+
+    /* ====== FORM ====== */
+    .input, .textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* ====== BUTTON ====== */
+    .btn {
+      display: inline-block;
+      background: #27ae60;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #219150;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔹 Barra lateral -->
+  <aside class="sidebar">
+    <h2 class="logo">📖 Mi Aula</h2>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">🏠 Inicio</a></li>
+        <li><a href="#">👤 Perfil</a></li>
+        <li><a href="#">⚙️ Ajustes</a></li>
+        <li><a href="#">🚪 Salir</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- 🔹 Contenido principal -->
+  <main class="main-content">
+    <header class="header">
+      <h1>➕ Subir Nueva Tarea</h1>
+      <p>Rellena los campos para agregar una tarea</p>
+    </header>
+
+    <section class="card subir-tarea">
+      <input type="text" id="tituloInput" placeholder="Título de la tarea" class="input"/>
+      
+      <textarea id="descripcionInput" placeholder="Descripción de la tarea" class="textarea"></textarea>
+      
+      <label for="tipoTarea">Tipo de tarea:</label>
+      <select id="tipoTarea" class="input">
+        <option value="archivo">📂 Subir Archivo</option>
+        <option value="texto">📝 Escribir Texto</option>
+        <option value="crucigrama">❓ Crucigrama</option>
+      </select>
+
+      <input type="file" id="archivoInput" class="input" style="display:none">
+
+      <button class="btn" onclick="agregarTarea()">✅ Agregar Tarea</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
